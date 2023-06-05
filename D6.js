@@ -74,7 +74,16 @@ console.log (arrN (arr1,5))
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+const stringName = ["EPICODE", "is", "great"]
 
+const stringLength = (string) => { 
+  const array = []
+   array = string.map ((word)=> {return word.length ()})
+ } 
+
+ stringLength (stringName)
+
+console.log(array);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
