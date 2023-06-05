@@ -52,17 +52,13 @@ console.log (total(arr1))
   Scrivi una funzione per sommare i numeri contenuti in un array (usare REDUCE)
 */
 
-total2 = (arr) => arr.reduce ((total, number) => total+number )
+const total2 = (arr) => arr.reduce ((total, number) => total+number )
 
 console.log (total2 (arr1))
 
 /*  ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-const numPlus = (myArray = myNumberArray, n) => {
-  const plus = myArray.map((myArray) => myArray + n)
-  console.log(plus)
-}
 
 const arrN = (arr,n) => {
   const arrN = arr.map ((arr) => arr + n)
@@ -76,14 +72,12 @@ console.log (arrN (arr1,5))
 */
 const stringName = ["EPICODE", "is", "great"]
 
-const stringLength = (string) => { 
-  const array = []
-   array = string.map ((word)=> {return word.length ()})
- } 
+const stringLength = (array) => { 
+  let length = array.map ((word)=> {return word.length})
+return length 
+} 
 
- stringLength (stringName)
-
-console.log(array);
+console.log(stringLength (stringName));
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
