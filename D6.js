@@ -82,6 +82,17 @@ console.log(stringLength (stringName));
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+const shotsNumbers = () => {
+  let shotsElement = []
+  for( let i = 1; i < 100; i+=2) {
+   shotsElement.push (i)  
+  }
+  console.log(shotsElement)
+  return shotsElement
+}
+
+shotsNumbers ()
+
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 
@@ -198,18 +209,47 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+const oldFilm = (array) =>{
+let oldFilm = {Year: 2023}
+array.forEach ((movie)=>{
+  let Year = parseInt(movie.Year)
+if (Year < oldFilm.Year) {
+oldFilm = movie
+}
+})
+return oldFilm
+}
 
+console.log(oldFilm(movies))
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
-
+const numberMovies = (array) => { 
+  let numberMovies = array.length
+  return numberMovies
+}
+console.log(numberMovies(movies));
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+let moviesTitle = []
 
+const searchMoviesTitle = (array) => {
+  const title = array.map ((word) => {return word.Title
+})
+ return title
+}
+moviesTitle = searchMoviesTitle (movies)
+console.log(moviesTitle);
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
+const millennialFilm = (array) =>{
+    let millennialFilm = array.filter ((movie) => parseInt(movie.Year) >= 2000)
+  return millennialFilm  
+  }
+let filmMillennial = millennialFilm (movies)
+console.log(filmMillennial);
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
